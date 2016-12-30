@@ -1,5 +1,9 @@
 <html>
-<?php include("cabecalho.php") ?>
+<?php include("cabecalho.php"); 
+include ("conecta.php");
+include ("banco-categoria.php");
+$categorias = listaCategorias($conexao); 
+?>
 <h1>Formulário de Produto</h1>
 
 <form action="adiciona-produto.php" method="post">
@@ -19,6 +23,17 @@
 		<tr><!--linhas -->	
 			<td>Descrição:</td><!--Colunas --> 
 			<td><textarea class="form-control" name="descricao"></textarea> <!-- class form-control deixa o campo com o tamanho inteiro -->
+			 
+		</tr>
+
+		<tr><!--linhas -->	
+			<td>Categoria:</td><!--Colunas -->
+			<td> 
+				<?php foreach ($categorias as $categoria) : ?>
+					<input type="radio" name="categoria_id" value="<?=$categoria['id']?>"><?=$categoria['nome']?><br/> <!-- class form-control deixa o campo com o tamanho inteiro -->
+				<?php endforeach?>
+			</td>
+			 
 			 
 		</tr>
 
