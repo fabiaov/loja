@@ -23,15 +23,24 @@ $categorias = listaCategorias($conexao);
 		<tr><!--linhas -->	
 			<td>Descrição:</td><!--Colunas --> 
 			<td><textarea class="form-control" name="descricao"></textarea> <!-- class form-control deixa o campo com o tamanho inteiro -->
-			 
+		</tr>
+
+		<tr>
+			<td></td>
+			<td><input type="checkbox" name="usado" value="true">Usado</td>
 		</tr>
 
 		<tr><!--linhas -->	
 			<td>Categoria:</td><!--Colunas -->
 			<td> 
-				<?php foreach ($categorias as $categoria) : ?>
-					<input type="radio" name="categoria_id" value="<?=$categoria['id']?>"><?=$categoria['nome']?><br/> <!-- class form-control deixa o campo com o tamanho inteiro -->
-				<?php endforeach?>
+				<select name="categoria_id" class="form-control">
+					<?php foreach ($categorias as $categoria) : ?>
+						<option value="<?=$categoria['id']?>">
+						<?=$categoria['nome']?>
+						</option><!-- class form-control deixa o campo com o tamanho inteiro -->
+					<?php endforeach?>
+				</select>	
+
 			</td>
 			 
 			 
