@@ -16,7 +16,7 @@ $usado = $produto['usado'] ? "checked='checked'" : "";
 	<table class="table">
 		<tr> <!-- linha de uma tabela HTML  -->
 			<td>Nome:</td> 
-			<td><input class="form-control" type="text" name="nome" value="<?=$produto['nome']?>"></td> <br>  <!-- <td> ordena o primeiro campo --> 
+			<td><input class="form-control" type="text" name="nome" value="<?=$produto['nome']?>"/></td> <br>  <!-- <td> ordena o primeiro campo --> 
 			
 		</tr>
 
@@ -45,7 +45,7 @@ $usado = $produto['usado'] ? "checked='checked'" : "";
 						$selecao = $essaEhACategoria ? "selected='selected'" : "";
 
 					 ?>
-						<option value="<?=$categoria['id']?>" selected="selected">
+						<option value="<?=$categoria['id']?>" <?=$selecao?>>
 						<?=$categoria['nome']?>
 						</option><!-- class form-control deixa o campo com o tamanho inteiro -->
 					<?php endforeach?>
