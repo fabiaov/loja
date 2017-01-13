@@ -4,18 +4,12 @@ include("banco-produto.php");
 include("banco-categoria.php");
 ?>
 <?php
-	if(array_key_exists("removido", $_GET) && $_GET["removido"] == "true"){
+	if(array_key_exists("removido", $_GET) && $_GET["removido"] == true){
 ?>	
 	<p class="alert-success">Produto Apagado com Sucesso</p>
 <?php
 	}
 ?>	
-
-
-
-
-
-
 
 <table class="table table-striped table-bordered"> <!-- fizemos uma tabela para os produtos  --> 
 	<?php
@@ -27,7 +21,7 @@ include("banco-categoria.php");
 			<td><?= $produto['preco']?></td>
 			<td><?= substr($produto['descricao'], 0,40)?></td>
 			<td><?= $produto['categoria_nome']?></td>
-			 <td><a class="btn btn-primary" href="produto-altera-formulario.php?id=<?=$produto['id']?>">alterar</a><td>
+			 <td><a class="btn btn-primary" href="produto-altera-formulario.php?id=<?=$produto['id']?>">alterar</a>
 
 			<td>
 				<form action="remove-produto.php" method="post">
