@@ -2,14 +2,14 @@
 include("conecta.php");
 include("banco-produto.php");
 include("banco-categoria.php");
+include("logica-usuario.php");
 ?>
+
+<?php if(isset($_SESSION["success"])){?>
+		<p class="alert-success"><?=$_SESSION["success"]?></a>
 <?php
-	if(array_key_exists("removido", $_GET) && $_GET["removido"] == true){
-?>	
-	<p class="alert-success">Produto Apagado com Sucesso</p>
-<?php
-	}
-?>	
+	unset($_SESSION["success"]); 
+}?>
 
 <table class="table table-striped table-bordered"> <!-- fizemos uma tabela para os produtos  --> 
 	<?php
