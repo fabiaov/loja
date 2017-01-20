@@ -3,20 +3,6 @@
 include("logica-usuario.php");
 ?>
 
-<?php if(isset($_SESSION["success"])){?>
-		<p class="alert-success"><?=$_SESSION["success"]?></a>
-<?php
-	unset($_SESSION["success"]); 
-}?>
-
-<?php if(isset($_SESSION["danger"])){?>
-		<p class="alert-danger"><?=$_SESSION["danger"]?></a>
-<?php
-	unset($_SESSION["danger"]); 
-}?>
-
-
-
 		<h1>Bem vindo à loja do Fabio!!</h1>
 
 		<?php if(usuarioEstaLogado()){ ?>
@@ -39,5 +25,5 @@ include("logica-usuario.php");
 				</table>
 			</form>
 	<?php } ?>
-<?php include ("cabecalho.php") ?>
+<?php include ("rodape.php") ?>
 </html

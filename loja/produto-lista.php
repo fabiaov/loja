@@ -2,14 +2,7 @@
 include("conecta.php");
 include("banco-produto.php");
 include("banco-categoria.php");
-include("logica-usuario.php");
 ?>
-
-<?php if(isset($_SESSION["success"])){?>
-		<p class="alert-success"><?=$_SESSION["success"]?></a>
-<?php
-	unset($_SESSION["success"]); 
-}?>
 
 <table class="table table-striped table-bordered"> <!-- fizemos uma tabela para os produtos  --> 
 	<?php
@@ -37,4 +30,4 @@ include("logica-usuario.php");
 		
 </table>
 
-<?php include ("cabecalho.php") ?>
+<?php include ("rodape.php") ?>
